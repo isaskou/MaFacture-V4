@@ -1,0 +1,41 @@
+<div>
+    <h2 class="text-info">GetAll</h2>
+    <span class="text-secondary">(max 10 dernières)</span>
+</div>
+<div class="table-responsive tablescroll">
+
+    <table class="table border border-info">
+        <thead class="text-center bg-info text-light">
+            <tr>
+                <th>#</th>
+                <th>Date</th>
+                <th>Client</th>
+                <th>Montant HTVA</th>
+                <th>Total TTC</th>
+                <th>Etat</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody class="text-center">
+            <tr *ngFor="let fc of facture">
+                <td>{{fc.id}}</td>
+                <td>{{fc.date}}</td>
+                <td>{{fc.client}}</td>
+                <td>{{fc.htva}} €</td>
+                <td>{{fc.htva*fc.tva}} €</td>
+                <td>{{fc.status}}</td>
+                <td>
+                    <i class="bi bi-search"></i>&nbsp;
+                    <i class="bi bi-pencil-square"></i>&nbsp;
+                    <i class="bi bi-trash"></i>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="pt-3 pb-2 mb-3">
+    <div class="float-sm-right">
+        <button type="button" class="btn btn-secondary btn-sm" routerLink="#">Voir toutes les factures</button>
+    </div>
+</div>
