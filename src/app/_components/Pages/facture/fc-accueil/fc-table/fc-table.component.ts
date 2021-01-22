@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-fc-get-all',
-  templateUrl: './fc-get-all.component.html',
-  styleUrls: ['./fc-get-all.component.scss']
+  selector: 'app-fc-table',
+  templateUrl: './fc-table.component.html',
+  styleUrls: ['./fc-table.component.scss']
 })
-export class FcGetAllComponent implements OnInit {
+export class FcTableComponent implements OnInit {
   facture:Array<any>=[
     {
       id: 1,
