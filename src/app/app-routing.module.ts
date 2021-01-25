@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { MainComponent } from './_components/Main/main.component';
-import { ClientComponent } from './_components/Pages/client/client.component';
+import { ClientAccueilComponent } from './_components/Pages/client/cl-accueil/client-accueil.component';
+import { ClNewComponent } from './_components/Pages/client/cl-new/cl-new.component';
 import { DashboardComponent } from './_components/Pages/dashboard/dashboard.component';
 import { FactureComponent } from './_components/Pages/facture/facture.component';
 
@@ -13,7 +14,9 @@ const routes: Routes = [
       [
         { path: 'dashboard', component: DashboardComponent },
         { path: 'facture', component: FactureComponent },
-        {path: 'client', component:ClientComponent}
+        {path: 'client', component:ClientAccueilComponent},
+        {path:'client/new', component:ClNewComponent}
+        
       ]
   },
   // {path:'dashboard', component:DcMenuComponent},

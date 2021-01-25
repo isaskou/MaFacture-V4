@@ -20,10 +20,14 @@ import { DcTableComponent } from './_components/Pages/dashboard/dc-content/dc-ta
 import { FcButtonComponent } from './_components/Pages/facture/fc-accueil/fc-button/fc-button.component';
 import { FcTableComponent } from './_components/Pages/facture/fc-accueil/fc-table/fc-table.component';
 import { MainComponent } from './_components/Main/main.component';
-import { ClientComponent } from './_components/Pages/client/client.component';
+import { ClientAccueilComponent } from './_components/Pages/client/cl-accueil/client-accueil.component';
 import { ClAccueilTitleComponent } from './_components/Pages/client/cl-accueil/cl-accueil-title/cl-accueil-title.component';
 import { ClAccueilButtonComponent } from './_components/Pages/client/cl-accueil/cl-accueil-button/cl-accueil-button.component';
 import { ClAccueilTableComponent } from './_components/Pages/client/cl-accueil/cl-accueil-table/cl-accueil-table.component';
+import { ClNewComponent } from './_components/Pages/client/cl-new/cl-new.component';
+import { ClNewTitleComponent } from './_components/Pages/client/cl-new/cl-new-title/cl-new-title.component';
+import { ClNewFormComponent } from './_components/Pages/client/cl-new/cl-new-form/cl-new-form.component';
+import { CountryPickerModule } from 'ngx-country-picker';
 
 @NgModule({
   declarations: [
@@ -41,10 +45,13 @@ import { ClAccueilTableComponent } from './_components/Pages/client/cl-accueil/c
     FcButtonComponent,
     FcTableComponent,
     MainComponent,
-    ClientComponent,
+    ClientAccueilComponent,
     ClAccueilTitleComponent,
     ClAccueilButtonComponent,
     ClAccueilTableComponent,
+    ClNewComponent,
+    ClNewTitleComponent,
+    ClNewFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,7 +59,8 @@ import { ClAccueilTableComponent } from './_components/Pages/client/cl-accueil/c
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule, 
+    CountryPickerModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

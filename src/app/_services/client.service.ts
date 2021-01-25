@@ -1,16 +1,16 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { IClient } from '../_models/interface/Contact/i-client';
+import { Client } from '../_models/classe/Contact/client';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ClientService {
-  client: IClient[]=[]
+  client: Client[]=[]
 
   constructor(private _httpClient: HttpClient) { }
 
-  getAllClients():IClient[]{
+  getAllClients():Client[]{
     return this.client;
   }
 }
