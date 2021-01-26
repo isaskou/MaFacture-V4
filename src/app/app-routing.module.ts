@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { MainComponent } from './_components/Main/main.component';
 import { ClientAccueilComponent } from './_components/Pages/client/cl-accueil/client-accueil.component';
+import { ClEditComponent } from './_components/Pages/client/cl-edit/cl-edit.component';
 import { ClGetOneComponent } from './_components/Pages/client/cl-get-one/cl-get-one.component';
 import { ClNewComponent } from './_components/Pages/client/cl-new/cl-new.component';
 import { DashboardComponent } from './_components/Pages/dashboard/dashboard.component';
@@ -17,7 +18,8 @@ const routes: Routes = [
         { path: 'facture', component: FactureComponent },
         {path: 'client', component:ClientAccueilComponent},
         {path:'client/new', component:ClNewComponent},
-        {path:'client/:id', component:ClGetOneComponent}
+        {path:'client/:id', component:ClGetOneComponent},
+        {path:'client/edit/:id', component:ClEditComponent}
         
       ]
   },
