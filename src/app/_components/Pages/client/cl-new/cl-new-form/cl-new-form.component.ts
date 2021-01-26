@@ -40,8 +40,7 @@ export class ClNewFormComponent implements OnInit {
 
   create(){
     const newClient=new Contact();
-    let values=this.newClientForm.value;
-
+    let values=this.newClientForm.value
     newClient.prenom=values["prenom"]
     newClient.nom=values["nom"]
     newClient.surnom=values["surnom"]
@@ -49,15 +48,16 @@ export class ClNewFormComponent implements OnInit {
     newClient.tel=values["tel"]
     newClient.rue=values["rue"]
     newClient.num=values["num"]
-    newClient.codePostal=values["CodePostal"]
+    newClient.codePostal=values["codePostal"]
     newClient.ville=values["ville"]
-    newClient.pays=values["Pays"]
+    newClient.pays=values["pays"]
     newClient.societe=values["societe"]
     newClient.numTVA=values["numTva"]
 
     this._contactService.insert(newClient).subscribe({
       next:()=>{
         alert("Client enregistré !");
+        console.log("ok")
         this._router.navigateByUrl('/main/client');},
       //next:()=>console.log("ok"),
       error:(error)=>console.log(error)

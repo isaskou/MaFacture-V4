@@ -24,7 +24,7 @@
                 <td>{{cl.rue +' '+cl.num+' - '+cl.codePostal+' '+cl.ville}}</td>
                 <td class="">
                     <a class="bi bi-search" [routerLink]="[cl.contactId]"></a>&nbsp;
-                    <a class="bi bi-pencil-square" routerLink="#"></a>&nbsp;
+                    <a class="bi bi-pencil-square" [routerLink]="['./edit/'+cl.contactId]"></a>&nbsp;
                     <a class="bi bi-trash" routerLink="#"></a>&nbsp;
                 </td>
             </tr>

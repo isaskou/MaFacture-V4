@@ -1,0 +1,97 @@
+<div class="row">
+
+    <div class="col-md-2">
+        <h4 class="border border-info">ClientID : {{currentContact.contactId}}</h4>
+    </div>
+    <div class="col-md-4"></div>
+    <!-- <div class="col-md-6 d-flex justify-content-around">
+        <button type="button" class="btn btn-primary">Modifier le client</button>
+        <button type="button" class="btn btn-warning">Supprimer le client</button>
+        <button type="button" class="btn btn-outline-secondary" routerLink="../../client">Annuler</button>
+    </div> -->
+</div>
+
+<hr />
+<form [formGroup]="editForm" (ngSubmit)="Update()">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>Société</label>
+            <input type="text" class="form-control" formControlName="societe" placeholder="Société" >
+        </div>
+        <div class="form-group col-md-6">
+            <label>Num de TVA</label>
+            <input type="text" class="form-control" formControlName="numTVA" placeholder="BE01 234 456 789"
+                >
+        </div>
+    </div>
+
+    <hr />
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <label>Prenom</label>
+            <input type="text" class="form-control" formControlName="prenom" placeholder="Prénom" >
+        </div>
+        <div class="form-group col-md-4">
+            <label>Nom</label>
+            <input type="text" class="form-control" formControlName="nom" placeholder="Nom" >
+        </div>
+        <div class="form-group col-md-4">
+            <label>Surnom</label>
+            <input type="text" class="form-control" formControlName="surnom" placeholder="Surnom" >
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-8">
+            <label>Email*</label>
+            <input type="email" class="form-control" formControlName="email" placeholder="toto@tutu.be"
+                 />
+        </div>
+        <div class="form-group col-md-4">
+            <label>Téléphone</label>
+            <input type="text" class="form-control" formControlName="tel" placeholder="0489.123.456">
+        </div>
+    </div>
+
+    <hr />
+
+    <div class="form-row">
+
+        <div class="form-group col-md-10">
+            <label>Adresse</label>
+            <input type="text" class="form-control" formControlName="rue" placeholder="Rue ..." >
+        </div>
+
+        <div class="form-group col-md-2">
+            <label>Numero</label>
+            <input type="text" class="form-control" formControlName="num" placeholder="Num" >
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>Ville</label>
+            <input type="text" class="form-control" formControlName="ville" placeholder="Ville" >
+        </div>
+        <div class="form-group col-md-4">
+            <label>Code Postal</label>
+            <input type="text" class="form-control" formControlName="codePostal" placeholder="Code Postal"
+                >
+
+        </div>
+
+        <div class="form-group col-md-2">
+            <label>Pays</label>
+            <input type="text" class="form-control" formControlName="pays" value="Pays" >
+        </div>
+    </div>
+    <hr />
+
+    <div class="d-flex flex-row-reverse">
+        <button type="submit" class="btn btn-primary">Enregistrer</button>
+        <button type="button" class="btn btn-secondary" routerLink="../../client">Annuler</button>
+      </div>
+</form>
+
+
+

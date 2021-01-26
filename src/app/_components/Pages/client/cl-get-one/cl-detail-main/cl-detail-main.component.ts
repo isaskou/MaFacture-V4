@@ -18,12 +18,8 @@ export class ClDetailMainComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-
-    
-    this._contactService.GetOne
-    (this._activatedRoute.snapshot.params["id"]).subscribe(
-      (data: Contact) => this.currentContact = data
-    )
+    this._contactService.GetOne(this._activatedRoute.snapshot.params["id"])
+      .subscribe((contact: Contact) => this.currentContact = contact)
 
   }
 
