@@ -12,4 +12,6 @@ export class Contact implements IContact {
     codePostal: string;
     ville: string;
     pays: string;
+    societe: any;
+    numTVA: any;
 }

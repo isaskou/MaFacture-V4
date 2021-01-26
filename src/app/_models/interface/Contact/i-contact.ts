@@ -10,4 +10,6 @@ export interface IContact {
     codePostal:string;
     ville:string;
     pays:string;
+    societe?:string;
+    numTVA?:string;
 }
