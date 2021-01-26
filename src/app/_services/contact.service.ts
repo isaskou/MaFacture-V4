@@ -36,10 +36,7 @@ export class ContactService {
     })
   }
 
-  Update(c:Contact){
-    this._httpClient.put(this.url, c).subscribe({
-      next:()=> this._router.navigate(['/client']),
-      error: (error)=> alert(error)
-    })
+  Update(c:Contact):Observable<Contact>{
+    return this._httpClient.put<Contact>(this.url+'/'+c.contactId, c)
   }
 }
