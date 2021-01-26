@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { MainComponent } from './_components/Main/main.component';
 import { ClientAccueilComponent } from './_components/Pages/client/cl-accueil/client-accueil.component';
+import { ClGetOneComponent } from './_components/Pages/client/cl-get-one/cl-get-one.component';
 import { ClNewComponent } from './_components/Pages/client/cl-new/cl-new.component';
 import { DashboardComponent } from './_components/Pages/dashboard/dashboard.component';
 import { FactureComponent } from './_components/Pages/facture/facture.component';
@@ -15,7 +16,8 @@ const routes: Routes = [
         { path: 'dashboard', component: DashboardComponent },
         { path: 'facture', component: FactureComponent },
         {path: 'client', component:ClientAccueilComponent},
-        {path:'client/new', component:ClNewComponent}
+        {path:'client/new', component:ClNewComponent},
+        {path:'client/:id', component:ClGetOneComponent}
         
       ]
   },

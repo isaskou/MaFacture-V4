@@ -28,6 +28,9 @@ import { ClNewComponent } from './_components/Pages/client/cl-new/cl-new.compone
 import { ClNewTitleComponent } from './_components/Pages/client/cl-new/cl-new-title/cl-new-title.component';
 import { ClNewFormComponent } from './_components/Pages/client/cl-new/cl-new-form/cl-new-form.component';
 import { CountryPickerModule } from 'ngx-country-picker';
+import { ClGetOneComponent } from './_components/Pages/client/cl-get-one/cl-get-one.component';
+import { ClDetailTitleComponent } from './_components/Pages/client/cl-get-one/cl-detail-title/cl-detail-title.component';
+import { ClDetailMainComponent } from './_components/Pages/client/cl-get-one/cl-detail-main/cl-detail-main.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +55,9 @@ import { CountryPickerModule } from 'ngx-country-picker';
     ClNewComponent,
     ClNewTitleComponent,
     ClNewFormComponent,
+    ClGetOneComponent,
+    ClDetailTitleComponent,
+    ClDetailMainComponent,
   ],
   imports: [
     BrowserModule,
