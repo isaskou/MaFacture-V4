@@ -1,39 +1,39 @@
-<form [formGroup]="newClientForm" (ngSubmit)="saveContact()">
+<form [formGroup]="newClientForm" (ngSubmit)="create()">
   <div class="form-row">
     <div class="form-group col-md-6">
-      <label for="Societe">Société</label>
-      <input type="text" class="form-control" id="Societe" placeholder="Société">
+      <label>Société</label>
+      <input type="text" class="form-control" formControlName="societe" placeholder="Société">
     </div>
     <div class="form-group col-md-6">
-      <label for="NumTVA">Num de TVA</label>
-      <input type="text" class="form-control" id="NumTVA" placeholder="Num TVA">
+      <label>Num de TVA</label>
+      <input type="text" class="form-control" formControlName="numTVA" placeholder="BE01 234 456 789">
     </div>
   </div>
 
 <hr/>
   <div class="form-row">
     <div class="form-group col-md-4">
-      <label for="Prenom">Prenom</label>
-      <input type="text" class="form-control" id="Prenom" placeholder="prenom">
+      <label>Prenom</label>
+      <input type="text" class="form-control" formControlName="prenom" placeholder="Prénom">
     </div>
     <div class="form-group col-md-4">
-      <label for="Nom">Nom</label>
-      <input type="text" class="form-control" id="Nom" placeholder="Nom">
+      <label>Nom</label>
+      <input type="text" class="form-control" formControlName="nom" placeholder="Nom">
     </div>
     <div class="form-group col-md-4">
-      <label for="Surnom">Surnom</label>
-      <input type="text" class="form-control" id="Surnom" placeholder="Surnom">
+      <label>Surnom</label>
+      <input type="text" class="form-control" formControlName="surnom" placeholder="Surnom">
     </div>
   </div>
 
   <div class="form-row">
     <div class="form-group col-md-8">
-      <label for="Email">Email</label>
-      <input type="email" class="form-control" id="Email" placeholder="toto@tutu.be"/>
+      <label>Email*</label>
+      <input type="email" class="form-control" formControlName="email" placeholder="toto@tutu.be"/>
     </div>
     <div class="form-group col-md-4">
-      <label for="Tel">Téléphone</label>
-      <input type="text" class="form-control" id="Tel" placeholder="0489.123.456">
+      <label>Téléphone</label>
+      <input type="text" class="form-control" formControlName="tel" placeholder="0489.123.456">
     </div>
   </div>
 
@@ -42,30 +42,30 @@
   <div class="form-row">
   
     <div class="form-group col-md-10">
-      <label for="Adresse">Adresse</label>
-      <input type="text" class="form-control" id="inputAddress" placeholder="Chée de Waterloo">
+      <label>Adresse</label>
+      <input type="text" class="form-control" formControlName="rue" placeholder="Rue ...">
     </div>
   
     <div class="form-group col-md-2">
-      <label for="Num">Numero</label>
-      <input type="text" class="form-control" id="Numero" placeholder="Num">
+      <label >Numero</label>
+      <input type="text" class="form-control" formControlName="num" placeholder="Num">
     </div>
   </div>
 
   <div class="form-row">
     <div class="form-group col-md-6">
-      <label for="Ville">Ville</label>
-      <input type="text" class="form-control" id="Ville">
+      <label >Ville</label>
+      <input type="text" class="form-control" formControlName="ville" placeholder="Ville">
     </div>
     <div class="form-group col-md-4">
-      <label for="CodePostal">Code Postal</label>
-      <input type="text" class="form-control" id="CodePostal">
+      <label >Code Postal</label>
+      <input type="text" class="form-control" formControlName="codePostal" placeholder="Code Postal">
 
     </div>
     
     <div class="form-group col-md-2">
-      <label for="Pays">Pays</label>
-      <input type="text" class="form-control" id="Pays">
+      <label>Pays</label>
+      <input type="text" class="form-control" formControlName="pays" value="Belgique">
     </div>
   </div>
 
@@ -73,7 +73,8 @@
   
   <div class="d-flex flex-row-reverse">
     <button type="submit" class="btn btn-primary">Enregistrer</button>
-    <button type="reset" class="btn btn-secondary">Annuler</button>
+    <button type="button" class="btn btn-secondary" routerLink="../../client">Annuler</button>
   </div>
 </form>
+
 

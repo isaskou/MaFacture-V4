@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { CountryPickerService, ICountry } from 'ngx-country-picker';
-import { Observable } from 'rxjs';
-import { ClientService } from 'src/app/_services/client.service';
+import { Router } from '@angular/router';
+import { Contact } from 'src/app/_models/classe/Contact/contact';
+import { ContactService } from 'src/app/_services/contact.service';
 import { ValidationService } from 'src/app/_services/validation.service';
 
 @Component({
@@ -16,29 +16,52 @@ export class ClNewFormComponent implements OnInit {
 
   constructor(
     private _builder:FormBuilder,
-    private _client:ClientService
+    private _contactService:ContactService,
+    private _router:Router
   ) {}
 
   ngOnInit(): void {
     this.newClientForm=this._builder.group({
-      Prenom:['',[Validators.minLength(3)]],
-      Nom:[''],
-      Surnom:[''],
-      Tel:[''],
-      Email:['',[Validators.required], [ValidationService.emailValidator]],
-      Rue:[''],
-      Num:[''],
-      CodePostal:[''],
-      Ville:[''],
-      Pays:[''],
-      Societe:[''],
-      NumTVA:['']
+      prenom:[''],
+      nom:[''],
+      surnom:[''],
+      tel:[''],
+      email:['',[Validators.required]],
+      rue:[''],
+      num:[''],
+      codePostal:[''],
+      ville:[''],
+      pays:[''],
+      societe:[''],
+      numTVA:['']
 
     });
   }
 
-  saveContact(): void {
-    console.log(this.newClientForm.value);
+  create(){
+    const newClient=new Contact();
+    let values=this.newClientForm.value;
+
+    newClient.prenom=values["prenom"]
+    newClient.nom=values["nom"]
+    newClient.surnom=values["surnom"]
+    newClient.email=values["email"]
+    newClient.tel=values["tel"]
+    newClient.rue=values["rue"]
+    newClient.num=values["num"]
+    newClient.codePostal=values["CodePostal"]
+    newClient.ville=values["ville"]
+    newClient.pays=values["Pays"]
+    newClient.societe=values["societe"]
+    newClient.numTVA=values["numTva"]
+
+    this._contactService.insert(newClient).subscribe({
+      next:()=>{
+        alert("Client enregistré !");
+        this._router.navigateByUrl('/main/client');},
+      //next:()=>console.log("ok"),
+      error:(error)=>console.log(error)
+    });
   }
 
 
