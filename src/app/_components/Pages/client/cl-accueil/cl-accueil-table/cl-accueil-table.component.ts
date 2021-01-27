@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Contact } from 'src/app/_models/classe/Contact/contact';
 import { ContactService } from 'src/app/_services/contact.service';
 
@@ -49,17 +50,29 @@ export class ClAccueilTableComponent implements OnInit {
   // ]
 
   constructor(
-    private _contactService: ContactService
+    private _contactService: ContactService,
+    private _router:Router
   ) { }
 
   ngOnInit(): void {
-    this._contactService.getAll().subscribe(
-      (data:Contact[]) => this.listeContact=data
-    )
+    this.initContactList();
   }
 
   delete(id:number){
-    this._contactService.Delete(id);
+    this._contactService.Delete(id).subscribe({
+      next:()=> {
+      alert('Client supprimé');
+      this.initContactList();
+    },
+      error:(error)=> alert(error)
+    });
+  }
+
+  private initContactList(): void{
+    this._contactService.getAll().subscribe(
+      (data:Contact[]) => this.listeContact=data
+    )
+
   }
 
 }

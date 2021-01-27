@@ -1,97 +1,106 @@
-<div class="row">
+<ng-container *ngIf="currentContact;then loaded;else notloaded;"></ng-container>
+<ng-template #notloaded>Chargement en cours...</ng-template>
+<ng-template #loaded>
+    <div class="row">
 
-    <div class="col-md-2">
-        <h4 class="border border-info">ClientID : {{currentContact.contactId}}</h4>
-    </div>
-    <div class="col-md-4"></div>
-    <div class="col-md-6 d-flex justify-content-around">
-        <button type="button" class="btn btn-primary" [routerLink]="['../edit/'+currentContact.contactId]">Modifier le client</button>
-        <button type="button" class="btn btn-warning">Supprimer le client</button>
-        <button type="button" class="btn btn-outline-secondary" routerLink="../../client">Annuler</button>
-    </div>
-</div>
-
-<hr/>
-
-<div class="form-row">
-    <div class="form-group col-md-6">
-        <label>Société</label>
-        <input type="text" class="form-control" [(ngModel)]="currentContact.societe" placeholder="Société" readonly>
-    </div>
-    <div class="form-group col-md-6">
-        <label>Num de TVA</label>
-        <input type="text" class="form-control" [(ngModel)]="currentContact.numTVA" placeholder="BE01 234 456 789"
-            readonly>
-    </div>
-</div>
-
-<hr />
-<div class="form-row">
-    <div class="form-group col-md-4">
-        <label>Prenom</label>
-        <input type="text" class="form-control" [(ngModel)]="currentContact.prenom" placeholder="Prénom" readonly>
-    </div>
-    <div class="form-group col-md-4">
-        <label>Nom</label>
-        <input type="text" class="form-control" [(ngModel)]="currentContact.nom" placeholder="Nom" readonly>
-    </div>
-    <div class="form-group col-md-4">
-        <label>Surnom</label>
-        <input type="text" class="form-control" [(ngModel)]="currentContact.surnom" placeholder="Surnom" readonly>
-    </div>
-</div>
-
-<div class="form-row">
-    <div class="form-group col-md-8">
-        <label>Email*</label>
-        <input type="email" class="form-control" [(ngModel)]="currentContact.email" placeholder="toto@tutu.be" readonly />
-    </div>
-    <div class="form-group col-md-4">
-        <label>Téléphone</label>
-        <input type="text" class="form-control" [(ngModel)]="currentContact.tel" placeholder="0489.123.456" readonly>
-    </div>
-</div>
-
-<hr />
-
-<div class="form-row">
-
-    <div class="form-group col-md-10">
-        <label>Adresse</label>
-        <input type="text" class="form-control" [(ngModel)]="currentContact.rue" placeholder="Rue ..." readonly>
+        <div class="col-md-2">
+            <h4 class="border border-info">ClientID : {{currentContact.contactId}}</h4>
+        </div>
+        <div class="col-md-4"></div>
+        <div class="col-md-6 d-flex justify-content-around">
+            <button type="button" class="btn btn-primary" [routerLink]="['../edit/'+currentContact.contactId]">Modifier
+                le client</button>
+            <button type="button" class="btn btn-warning">Supprimer le client</button>
+            <button type="button" class="btn btn-outline-secondary" routerLink="../../client">Annuler</button>
+        </div>
     </div>
 
-    <div class="form-group col-md-2">
-        <label>Numero</label>
-        <input type="text" class="form-control" [(ngModel)]="currentContact.num" placeholder="Num" readonly>
-    </div>
-</div>
+    <hr />
 
-<div class="form-row">
-    <div class="form-group col-md-6">
-        <label>Ville</label>
-        <input type="text" class="form-control" [(ngModel)]="currentContact.ville" placeholder="Ville" readonly>
-    </div>
-    <div class="form-group col-md-4">
-        <label>Code Postal</label>
-        <input type="text" class="form-control" [(ngModel)]="currentContact.codePostal" placeholder="Code Postal" readonly>
-
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>Société</label>
+            <input type="text" class="form-control" [(ngModel)]="currentContact.societe" placeholder="Société" readonly>
+        </div>
+        <div class="form-group col-md-6">
+            <label>Num de TVA</label>
+            <input type="text" class="form-control" [(ngModel)]="currentContact.numTVA" placeholder="BE01 234 456 789"
+                readonly>
+        </div>
     </div>
 
-    <div class="form-group col-md-2">
-        <label>Pays</label>
-        <input type="text" class="form-control" [(ngModel)]="currentContact.pays" value="Pays" readonly>
+    <hr />
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <label>Prenom</label>
+            <input type="text" class="form-control" [(ngModel)]="currentContact.prenom" placeholder="Prénom" readonly>
+        </div>
+        <div class="form-group col-md-4">
+            <label>Nom</label>
+            <input type="text" class="form-control" [(ngModel)]="currentContact.nom" placeholder="Nom" readonly>
+        </div>
+        <div class="form-group col-md-4">
+            <label>Surnom</label>
+            <input type="text" class="form-control" [(ngModel)]="currentContact.surnom" placeholder="Surnom" readonly>
+        </div>
     </div>
-</div>
 
-<hr />
-
-
-<div class="row">
-    <div class="col-md-6"></div>
-    <div class="col-md-6 d-flex justify-content-around">
-        <button type="button" class="btn btn-primary" [routerLink]="['../edit/'+currentContact.contactId]">Modifier le client</button>
-        <button type="button" class="btn btn-warning">Supprimer le client</button>
-        <button type="button" class="btn btn-outline-secondary" routerLink="../../client">Annuler</button>
+    <div class="form-row">
+        <div class="form-group col-md-8">
+            <label>Email*</label>
+            <input type="email" class="form-control" [(ngModel)]="currentContact.email" placeholder="toto@tutu.be"
+                readonly />
+        </div>
+        <div class="form-group col-md-4">
+            <label>Téléphone</label>
+            <input type="text" class="form-control" [(ngModel)]="currentContact.tel" placeholder="0489.123.456"
+                readonly>
+        </div>
     </div>
-</div>
+
+    <hr />
+
+    <div class="form-row">
+
+        <div class="form-group col-md-10">
+            <label>Adresse</label>
+            <input type="text" class="form-control" [(ngModel)]="currentContact.rue" placeholder="Rue ..." readonly>
+        </div>
+
+        <div class="form-group col-md-2">
+            <label>Numero</label>
+            <input type="text" class="form-control" [(ngModel)]="currentContact.num" placeholder="Num" readonly>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>Ville</label>
+            <input type="text" class="form-control" [(ngModel)]="currentContact.ville" placeholder="Ville" readonly>
+        </div>
+        <div class="form-group col-md-4">
+            <label>Code Postal</label>
+            <input type="text" class="form-control" [(ngModel)]="currentContact.codePostal" placeholder="Code Postal"
+                readonly>
+
+        </div>
+
+        <div class="form-group col-md-2">
+            <label>Pays</label>
+            <input type="text" class="form-control" [(ngModel)]="currentContact.pays" value="Pays" readonly>
+        </div>
+    </div>
+
+    <hr />
+
+
+    <div class="row">
+        <div class="col-md-6"></div>
+        <div class="col-md-6 d-flex justify-content-around">
+            <button type="button" class="btn btn-primary" [routerLink]="['../edit/'+currentContact.contactId]">Modifier
+                le client</button>
+            <button type="button" class="btn btn-warning">Supprimer le client</button>
+            <button type="button" class="btn btn-outline-secondary" routerLink="../../client">Annuler</button>
+        </div>
+    </div>
+</ng-template>

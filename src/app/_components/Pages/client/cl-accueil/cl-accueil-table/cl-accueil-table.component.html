@@ -25,7 +25,7 @@
                 <td class="">
                     <a class="bi bi-search" [routerLink]="[cl.contactId]"></a>&nbsp;
                     <a class="bi bi-pencil-square" [routerLink]="['./edit/'+cl.contactId]"></a>&nbsp;
-                    <a class="bi bi-trash" routerLink="#"></a>&nbsp;
+                    <a class="bi bi-trash" (click)="delete(cl.contactId)"></a>&nbsp;
                 </td>
             </tr>
         </tbody>
