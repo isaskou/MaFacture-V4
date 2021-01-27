@@ -29,11 +29,8 @@ export class ContactService {
     return this._httpClient.get<Contact>(this.url +'/'+ id)
   }
 
-  Delete(id:number){
-    this._httpClient.delete(this.url +'/'+ id).subscribe({
-      next:()=> alert('Client supprimé'),
-      error:(error)=> alert(error)
-    })
+  Delete(id:number):Observable<number>{
+    return this._httpClient.delete<number>(this.url +'/'+ id)
   }
 
   Update(c:Contact):Observable<Contact>{
