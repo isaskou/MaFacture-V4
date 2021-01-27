@@ -1,8 +1,7 @@
-<div>
-    <h2 class="text-info">GetAll</h2>
-</div>
+<app-cl-accueil-title></app-cl-accueil-title>
+<app-cl-accueil-button></app-cl-accueil-button>
 
-<div class="table-responsive-sm tablescroll">
+<div class="table-responsive-sm">
 
     <table class="table border border-info">
         <thead class="text-center bg-info text-light">
@@ -11,6 +10,7 @@
                 <th>Société</th>
                 <th>Nom</th>
                 <th>Prenom</th>
+                <th>Surnom</th>
                 <th>Adresse</th>
                 <th>Actions</th>
             </tr>
@@ -21,6 +21,7 @@
                 <td>{{cl.societe}}</td>
                 <td>{{cl.nom}}</td>
                 <td>{{cl.prenom}} </td>
+                <td>{{cl.surnom}}</td>
                 <td>{{cl.rue +' '+cl.num+' - '+cl.codePostal+' '+cl.ville}}</td>
                 <td class="">
                     <a class="bi bi-search" [routerLink]="[cl.contactId]"></a>&nbsp;
@@ -30,10 +31,4 @@
             </tr>
         </tbody>
     </table>
-</div>
-
-<div class="pt-3 pb-2 mb-3">
-    <div class="float-sm-right">
-        <button type="button" class="btn btn-secondary btn-sm" routerLink="./getall">Voir tous les clients</button>
-    </div>
 </div>
