@@ -5,6 +5,7 @@ import { MainComponent } from './_components/Main/main.component';
 import { CaisseAccueilComponent } from './_components/Pages/caisse/caisse-accueil/caisse-accueil.component';
 import { ClientAccueilComponent } from './_components/Pages/client/cl-accueil/client-accueil.component';
 import { ClEditComponent } from './_components/Pages/client/cl-edit/cl-edit.component';
+import { ClGetAllComponent } from './_components/Pages/client/cl-get-all/cl-get-all.component';
 import { ClGetOneComponent } from './_components/Pages/client/cl-get-one/cl-get-one.component';
 import { ClNewComponent } from './_components/Pages/client/cl-new/cl-new.component';
 import { DashboardComponent } from './_components/Pages/dashboard/dashboard.component';
@@ -27,6 +28,7 @@ const routes: Routes = [
         { path: 'facture', component: FactureComponent },
         {path:'produit', component:ProdAccueilComponent},
         {path: 'client', component:ClientAccueilComponent},
+          {path:'client/getall', component:ClGetAllComponent},
           {path:'client/new', component:ClNewComponent},
           {path:'client/:id', component:ClGetOneComponent},
           {path:'client/edit/:id', component:ClEditComponent},

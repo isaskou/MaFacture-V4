@@ -41,6 +41,11 @@ import { ParamAccueilComponent } from './_components/Pages/parametres/param-accu
 import { FourAccueilComponent } from './_components/Pages/fournisseur/four-accueil/four-accueil.component';
 import { CaisseAccueilComponent } from './_components/Pages/caisse/caisse-accueil/caisse-accueil.component';
 import { ProdAccueilComponent } from './_components/Pages/produit/prod-accueil/prod-accueil.component';
+import { ProdButtonComponent } from './_components/Pages/produit/prod-accueil/prod-button/prod-button.component';
+import { ProdListComponent } from './_components/Pages/produit/prod-accueil/prod-list/prod-list.component';
+import { ClGetAllComponent } from './_components/Pages/client/cl-get-all/cl-get-all.component';
+import { FourButtonComponent } from './_components/Pages/fournisseur/four-accueil/four-button/four-button.component';
+import { FourListComponent } from './_components/Pages/fournisseur/four-accueil/four-list/four-list.component';
 
 @NgModule({
   declarations: [
@@ -79,6 +84,11 @@ import { ProdAccueilComponent } from './_components/Pages/produit/prod-accueil/p
     FourAccueilComponent,
     CaisseAccueilComponent,
     ProdAccueilComponent,
+    ProdButtonComponent,
+    ProdListComponent,
+    ClGetAllComponent,
+    FourButtonComponent,
+    FourListComponent,
   ],
   imports: [
     BrowserModule,
