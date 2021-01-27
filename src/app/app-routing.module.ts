@@ -7,10 +7,13 @@ import { ClGetOneComponent } from './_components/Pages/client/cl-get-one/cl-get-
 import { ClNewComponent } from './_components/Pages/client/cl-new/cl-new.component';
 import { DashboardComponent } from './_components/Pages/dashboard/dashboard.component';
 import { FactureComponent } from './_components/Pages/facture/facture.component';
+import { Page404Component } from './_components/Pages/page404/page404.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'main/dashboard', pathMatch: 'full' },
   {path:'main', redirectTo:'main/dashboard', pathMatch:'full'},
+  { path: '404', component: Page404Component },
+  { path: '**', redirectTo: '404' },
   {
     path: 'main', component: MainComponent, children:
       [

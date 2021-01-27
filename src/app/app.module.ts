@@ -27,13 +27,13 @@ import { ClAccueilTableComponent } from './_components/Pages/client/cl-accueil/c
 import { ClNewComponent } from './_components/Pages/client/cl-new/cl-new.component';
 import { ClNewTitleComponent } from './_components/Pages/client/cl-new/cl-new-title/cl-new-title.component';
 import { ClNewFormComponent } from './_components/Pages/client/cl-new/cl-new-form/cl-new-form.component';
-import { CountryPickerModule } from 'ngx-country-picker';
 import { ClGetOneComponent } from './_components/Pages/client/cl-get-one/cl-get-one.component';
 import { ClDetailTitleComponent } from './_components/Pages/client/cl-get-one/cl-detail-title/cl-detail-title.component';
 import { ClDetailMainComponent } from './_components/Pages/client/cl-get-one/cl-detail-main/cl-detail-main.component';
 import { ClEditComponent } from './_components/Pages/client/cl-edit/cl-edit.component';
 import { ClEditTitleComponent } from './_components/Pages/client/cl-edit/cl-edit-title/cl-edit-title.component';
 import { ClEditFormComponent } from './_components/Pages/client/cl-edit/cl-edit-form/cl-edit-form.component';
+import { Page404Component } from './_components/Pages/page404/page404.component';
 
 @NgModule({
   declarations: [
@@ -64,6 +64,7 @@ import { ClEditFormComponent } from './_components/Pages/client/cl-edit/cl-edit-
     ClEditComponent,
     ClEditTitleComponent,
     ClEditFormComponent,
+    Page404Component,
   ],
   imports: [
     BrowserModule,
@@ -72,7 +73,7 @@ import { ClEditFormComponent } from './_components/Pages/client/cl-edit/cl-edit-
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule, 
-    CountryPickerModule.forRoot()
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
